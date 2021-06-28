@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Return Quote
+{% endblock %}
+
+{% block main %}
+<h1>Here is your requested Quote information</h1>
+
+<br>
+<br>
+
+<h4>A share of {{ stock['name'] }} ({{ stock['symbol'] }}) costs ${{ stock['price'] }}</h4>
+
+{% endblock %}

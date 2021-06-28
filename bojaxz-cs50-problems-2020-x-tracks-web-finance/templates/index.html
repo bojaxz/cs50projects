@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+<h1>Finance Home Page</h1>
+
+
+Hello! Welcome to CS50 finance! Get ready to buy some stocks!!
+<br>
+<br>
+Table of currently owned stocks
+<br>
+
+      <table class="table table-striped">
+         <thead>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Total</th>
+         </thead>
+
+         <tbody>
+            {% for my_stock in my_stocks %}
+            <tr>
+               <td>{{ my_stock["symbol"] }}</td>
+               <td>{{ my_stock["name"] }}</td>
+               <td>{{ my_stock["shares"] }}</td>
+               <td>{{ my_stock["price"] }}</td>
+               <td>{{ my_stock["total"] }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+               <td colspan="4">Cash</td>
+               <td>{{ cash }}</td>
+            </tr>
+         </tbody>
+
+         <tfoot>
+            <tr>
+               <td colspan="4">Total Value</td>
+               <td>{{ total_cash }}</td>
+            </tr>
+         </tfoot>
+
+      </table>
+
+
+{% endblock %}

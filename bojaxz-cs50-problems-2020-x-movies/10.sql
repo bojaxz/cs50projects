@@ -1,0 +1,2 @@
+-- select the names of stars in movies with a 9 or better rating
+select name from people as p JOIN directors as d ON p.id = d.person_id JOIN movies as m ON d.movie_id = m.id JOIN ratings as r ON m.id = r.movie_id where rating >= 9.0;

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Cash
+{% endblock %}
+
+{% block main %}
+<h1>Add more cash to buy more stocks!</h1>
+
+<br>
+<br>
+      <table class="table table-striped">
+         <thead>
+            <th>Current Cash</th>
+         </thead>
+
+         <tbody>
+            <tr>
+               <td> {{ cash }} </td>
+            </tr>
+         </tbody>
+
+         <tfoot>
+            <tr>
+               <td>Thank you for using our service!</td>
+            </tr>
+         </tfoot>
+
+      </table>
+<br>
+<br>
+<form action="/add_cash" method="post">
+    <div class="form-group">
+        <input autocomplete="off" id="shares" type="number" name="cash_amount" class="form-control" autofocus placeholder="0" min="1">
+    </div>
+
+    <button class="btn btn-primary" id="submit" input type="submit" disabled>Add Cash</button>
+</form>
+<script>
+    document.querySelector('#shares').onkeyup = function() {
+        if (document.querySelector('#shares').value === '') {
+            document.querySelector('#submit').disabled = true;
+        } else {
+            document.querySelector('#submit').disabled = false;
+        }
+    }
+</script>
+
+{% endblock %}

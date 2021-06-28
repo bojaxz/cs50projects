@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<h1>History Page</h1>
+
+List of Transaction History
+<br>
+<br>
+
+      <table class="table table-striped">
+         <thead>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Action</th>
+            <th>Time</th>
+         </thead>
+
+         <tbody>
+            {% for my_stock in my_stocks %}
+            <tr>
+               <td>{{ my_stock["symbol"] }}</td>
+               <td>{{ my_stock["name"] }}</td>
+               <td>{{ my_stock["shares"] }}</td>
+               <td>{{ my_stock["price"] }}</td>
+               <td>{{ my_stock["action"] }}</td>
+               <td>{{ my_stock["time"] }}</td>
+            </tr>
+            {% endfor %}
+         </tbody>
+
+         <tfoot>
+            <tr>
+               <td colspan="6">Thank you for using our service!</td>
+            </tr>
+         </tfoot>
+
+      </table>
+
+
+{% endblock %}
